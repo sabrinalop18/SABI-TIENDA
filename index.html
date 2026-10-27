@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SABIÁ — El verano empieza acá</title>
+
+  <link rel="stylesheet" href="estilos.css">
+  <script src="sketch.js" defer></script>
+</head>
+
+<body>
+  <div class="franja">
+    UN POQUITO DE BRASIL. UN MONTÓN DE VERANO.
+  </div>
+
+  <header>
+    <a href="#productos">Tienda ↗</a>
+
+    <a class="logo" href="#">
+      SABIÁ
+      <span>hecho para disfrutar</span>
+    </a>
+
+    <button id="abrirBolsa" class="boton-bolsa">
+      Tu bolsa <span id="cantidadBolsa">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="portada">
+      <img
+        src="assets/verano.png"
+        alt="Cucuruchos y helados en una escena veraniega"
+      >
+
+      <div class="texto-portada">
+        <p class="etiqueta">CUCURUCHOS, HELADOS Y COSAS LINDAS</p>
+
+        <h1>El verano<br>empieza acá.</h1>
+
+        <p>
+          Insumos para tu negocio.<br>
+          Packs para que empezar sea más fácil.
+        </p>
+
+        <a class="boton" href="#productos">
+          Encontrá tus favoritos ↘
+        </a>
+      </div>
+
+      <div class="sello">
+        MAIS<br>VERÃO<br>POR FAVOR ☀
+      </div>
+    </section>
+
+    <div class="cinta">
+      <span>Para compartir ☀</span>
+      <span>Para emprender ☀</span>
+      <span>Para disfrutar ☀</span>
+    </div>
+
+    <section class="tienda" id="productos">
+      <p class="etiqueta rojo">productos bien elegidos!</p>
+      <h2>Listos para algo rico.</h2>
+
+      <div class="filtros" aria-label="Filtrar productos">
+        <button class="activo" data-categoria="Todo">Todo</button>
+        <button data-categoria="Cucuruchos">Cucuruchos</button>
+        <button data-categoria="Packaging">Packaging</button>
+        <button data-categoria="Packs">Packs para emprender</button>
+      </div>
+
+      <p class="aclaracion">
+        Precios en pesos uruguayos. El envío se paga aparte en destino.
+      </p>
+
+      <div class="productos" id="listaProductos"></div>
+    </section>
+
+    <section class="informacion">
+      <div>
+        <p class="etiqueta">01 / ELEGÍ</p>
+        <h3>Lo rico empieza<br>con una buena base.</h3>
+      </div>
+
+      <div>
+        <p class="etiqueta">02 / RECIBÍ</p>
+        <h3>Envío o retiro.<br>Vos elegís.</h3>
+        <p>DAC, otra agencia o retiro coordinado con cita previa.</p>
+      </div>
+
+      <div>
+        <p class="etiqueta">03 / DISFRUTÁ</p>
+        <h3>Más momentos<br>con sabor a verano.</h3>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div>
+        <p class="etiqueta rojo">QUIÉNES SOMOS</p>
+        <h2>Detrás de SABIÁ</h2>
+        <span class="sol" aria-hidden="true">☀</span>
+      </div>
+
+      <div>
+        <p>
+          ¡Soy Sabri! SABIÁ nace de mis ganas de emprender y de
+          acercar productos de Brasil que acompañen las ideas de otros.
+        </p>
+
+        <p>
+          Si ya tenés un negocio o estás pensando en empezar uno,
+          la idea es hacerte un poquito más fácil encontrar cucuruchos,
+          packaging y combinaciones para dar ese primer paso.
+        </p>
+
+        <p>
+          Estoy empezando también, así que este proyecto va creciendo
+          conmigo. Qué lindo que tu emprendimiento pueda ser parte
+          del mío. ☀️
+        </p>
+
+        <p><strong>¿Tenés alguna duda? Estoy para ayudarte a elegir.</strong></p>
+
+        <div class="contactos">
+          <a href="mailto:sabrinalop18@gmail.com">
+            sabrinalop18@gmail.com ↗
+          </a>
+
+          <a href="tel:+59892066060">092 066 060 ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="logo">SABIÁ</span>
+    <p>Cucuruchos & packaging<br>Un poquito de Brasil, cerquita tuyo.</p>
+    <a href="#productos">Volver a la tienda ↑</a>
+  </footer>
+
+  <p id="aviso" class="aviso" role="status"></p>
+
+  <dialog id="bolsa">
+    <div class="encabezado-bolsa">
+      <h2>Tu bolsa</h2>
+      <button id="cerrarBolsa" aria-label="Cerrar bolsa">✕</button>
+    </div>
+
+    <div id="contenidoBolsa"></div>
+
+    <p class="total">
+      Productos: <strong id="totalBolsa">$0</strong>
+    </p>
+
+    <form id="formulario">
+      <h3>Coordiná tu compra</h3>
+
+      <label>
+        Nombre y apellido
+        <input name="nombre" autocomplete="name" required>
+      </label>
+
+      <label>
+        Correo electrónico
+        <input name="correo" type="email" autocomplete="email" required>
+      </label>
+
+      <label>
+        Número de contacto
+        <input name="telefono" type="tel" autocomplete="tel" required>
+      </label>
+
+      <label>
+        ¿Cómo querés recibirlo?
+        <select name="entrega" id="entrega">
+          <option value="Retiro coordinado">Retiro coordinado</option>
+          <option value="DAC">Envío por DAC</option>
+          <option value="Otra agencia">Otra agencia</option>
+        </select>
+      </label>
+
+      <div id="campoAgencia" hidden>
+        <label>
+          ¿Qué agencia preferís?
+          <input name="agencia" id="agencia" maxlength="100">
+        </label>
+      </div>
+
+      <div id="camposDireccion" hidden>
+        <label>
+          Departamento
+          <input name="departamento" id="departamento">
+        </label>
+
+        <label>
+          Localidad
+          <input name="localidad" id="localidad">
+        </label>
+
+        <label>
+          Dirección y número
+          <input
+            name="direccion"
+            id="direccion"
+            autocomplete="street-address"
+          >
+        </label>
+
+        <label>
+          Apartamento o indicaciones — opcional
+          <input name="indicaciones">
+        </label>
+
+        <p class="aclaracion">
+          El envío es a cargo del comprador y se paga en destino.
+          No se incluye en el total de los productos.
+          Con otra agencia, coordinamos la disponibilidad de esta modalidad.
+        </p>
+      </div>
+
+      <p class="aclaracion">
+        Para transferir el total de la bolsa, prepará el resumen.
+        Luego enviánoslo por correo para coordinar disponibilidad y entrega.
+      </p>
+
+      <button class="boton ancho" type="submit" id="preparar">
+        Preparar compra por transferencia →
+      </button>
+    </form>
+
+    <section id="datosTransferencia" hidden>
+      <h3>Resumen de tu compra</h3>
+      <pre id="resumen"></pre>
+
+      <div class="datos-banco">
+        <h3>Transferencia BROU</h3>
+        <p><strong>Titular:</strong> Sabrina López</p>
+        <p><strong>Cuenta:</strong> 110876978-00001</p>
+        <p><strong>Tipo:</strong> Caja de ahorro en pesos</p>
+        <p><strong>Importe:</strong> <span id="importeTransferencia"></span></p>
+      </div>
+
+      <p>
+        Coordiná disponibilidad y entrega antes de transferir.
+        El pago se confirma después de verificar la acreditación.
+      </p>
+
+      <a class="boton ancho" id="enviarCorreo">
+        Abrir correo para coordinar ↗
+      </a>
+
+      <p class="aclaracion">
+        Este botón abre un borrador en tu aplicación de correo.
+        Tenés que enviarlo para que recibamos la información.
+        Esta página no guarda ni envía pedidos automáticamente.
+      </p>
+    </section>
+  </dialog>
+</body>
+</html>

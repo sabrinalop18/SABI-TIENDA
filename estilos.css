@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --crema: #fffbee;
+  --rojo: #e73726;
+  --tinta: #39291f;
+  --amarillo: #f5e93e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #007eaa;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.franja {
+  padding: 11px;
+  background: var(--rojo);
+  color: var(--crema);
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+header {
+  height: 115px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--rojo);
+  font-size: 13px;
+}
+
+.logo {
+  color: var(--rojo);
+  font: bold italic 53px Georgia, serif;
+  letter-spacing: -4px;
+}
+
+.logo span {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  font: 10px "DM Sans", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.boton-bolsa {
+  background: none;
+  border: none;
+  color: var(--rojo);
+}
+
+#cantidadBolsa {
+  display: inline-grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--rojo);
+  color: white;
+}
+
+.portada {
+  position: relative;
+  height: 510px;
+  margin: 0 3%;
+  background: #00a6c7;
+  overflow: hidden;
+}
+
+.portada > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-portada {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  color: var(--crema);
+}
+
+.etiqueta {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.rojo {
+  color: var(--rojo);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", Arial, sans-serif;
+}
+
+h1 {
+  margin: 24px 0;
+  font-size: clamp(48px, 6.5vw, 89px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+}
+
+h2 {
+  margin: 12px 0 25px;
+  font-size: 36px;
+  letter-spacing: -1.5px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 16px 22px;
+  border: none;
+  background: var(--rojo);
+  color: var(--crema);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sello {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+  display: grid;
+  align-content: center;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: var(--amarillo);
+  color: var(--rojo);
+  text-align: center;
+  font-weight: 700;
+  transform: rotate(13deg);
+}
+
+.cinta {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 23px;
+  border-bottom: 1px solid #e7372633;
+  color: var(--rojo);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tienda {
+  padding: 60px 7%;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.filtros button {
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: #776b60;
+}
+
+.filtros .activo {
+  border-bottom-color: var(--rojo);
+  color: var(--rojo);
+}
+
+.aclaracion {
+  color: #776b60;
+  font-size: 12px;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 22px;
+  margin-top: 25px;
+}
+
+.producto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.producto h3 {
+  margin: 18px 0 6px;
+  font-size: 17px;
+}
+
+.producto p {
+  margin: 6px 0;
+}
+
+.detalle {
+  color: #776b60;
+  font-size: 13px;
+}
+
+.precio-agregar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.agregar {
+  padding: 10px 14px;
+  border: 1px solid var(--rojo);
+  background: none;
+  color: var(--rojo);
+  font-size: 12px;
+}
+
+.pago-directo {
+  width: 100%;
+}
+
+.producto .nota-pago {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #776b60;
+}
+
+.proximamente {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--amarillo);
+  color: var(--rojo);
+  text-align: center;
+  font: 600 34px "Space Grotesk", Arial, sans-serif;
+}
+
+.informacion {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 7%;
+  background: var(--amarillo);
+  color: var(--rojo);
+}
+
+.informacion h3 {
+  font-size: 25px;
+}
+
+.informacion p {
+  font-size: 12px;
+}
+
+.nosotros {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  padding: 65px 7%;
+}
+
+.sol {
+  color: var(--rojo);
+  font-size: 90px;
+}
+
+.contactos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contactos a {
+  padding: 12px;
+  border: 1px solid var(--rojo);
+  color: var(--rojo);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 35px 7%;
+  border-top: 1px solid #e7372633;
+  color: var(--rojo);
+}
+
+footer p,
+footer a {
+  font-size: 12px;
+}
+
+dialog {
+  width: min(94%, 530px);
+  max-height: 90vh;
+  padding: 25px;
+  border: none;
+  background: var(--crema);
+  color: var(--tinta);
+  overflow-y: auto;
+}
+
+dialog::backdrop {
+  background: #241b1680;
+}
+
+.encabezado-bolsa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.encabezado-bolsa h2 {
+  margin: 0;
+}
+
+#cerrarBolsa {
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 22px;
+}
+
+.item-bolsa {
+  padding: 18px 0;
+  border-bottom: 1px solid #dfd5c4;
+}
+
+.item-bolsa p {
+  margin: 5px 0;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 10px;
+}
+
+.controles button {
+  padding: 5px 10px;
+  border: 1px solid #bdaf9b;
+  background: transparent;
+}
+
+.total {
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #bdaf9b;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ancho {
+  display: block;
+  width: 100%;
+}
+
+.datos-banco {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--amarillo);
+}
+
+pre {
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.aviso {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  z-index: 10;
+  margin: 0;
+  padding: 12px 22px;
+  background: var(--rojo);
+  color: white;
+  font-size: 13px;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.aviso.visible {
+  opacity: 1;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  header {
+    height: 95px;
+    padding: 0 5%;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .portada {
+    height: 540px;
+  }
+
+  .portada > img {
+    object-position: 65% center;
+  }
+
+  .texto-portada {
+    top: 8%;
+    left: 7%;
+    padding-right: 10px;
+    text-shadow: 0 1px 8px #00748c;
+  }
+
+  h1 {
+    font-size: 55px;
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: 29px;
+  }
+
+  .texto-portada .etiqueta {
+    font-size: 8px;
+  }
+
+  .sello {
+    width: 85px;
+    height: 85px;
+    font-size: 13px;
+  }
+
+  .cinta {
+    gap: 12px;
+    padding: 18px 10px;
+    font-size: 8px;
+  }
+
+  .tienda {
+    padding: 35px 6%;
+  }
+
+  .productos,
+  .informacion,
+  .nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .nosotros {
+    gap: 10px;
+    padding: 40px 7%;
+  }
+
+  .sol {
+    display: none;
+  }
+}
